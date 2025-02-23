@@ -1,6 +1,5 @@
 from init import db, ma
 from sqlalchemy import Date
-from marshmallow import Schema
 from datetime import datetime
 
 class Invoice(db.Model):
@@ -10,9 +9,9 @@ class Invoice(db.Model):
 
     amount = db.Column(db.Float, nullable=False)
     date = db.Column(Date)
-    created_at = db.Column(db.DateTime, default=datetime.timezone.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-    matches = db.relationship('Match', backref='invoice', lazy=True)
+    # matches = db.relationship('Match', backref='invoice', lazy=True)
 
 class InvoiceSchema(ma.Schema):
     class Meta:
