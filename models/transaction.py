@@ -19,3 +19,4 @@ class TransactionSchema(ma.Schema):
 
 one_transaction = TransactionSchema()
 many_transactions = TransactionSchema(many=True)
+transaction_without_id = TransactionSchema(exclude=['id'])

@@ -20,3 +20,4 @@ class InvoiceSchema(ma.Schema):
 
 one_invoice = InvoiceSchema()
 many_invoices = InvoiceSchema(many=True)
+invoice_without_id = InvoiceSchema(exclude=['id'])

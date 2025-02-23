@@ -20,3 +20,4 @@ class MatchSchema(ma.Schema):
 
 one_match = MatchSchema()
 many_matches = MatchSchema(many=True)
+match_without_id = MatchSchema(exclude=['id'])
